@@ -554,7 +554,7 @@ class EE_SPCO_Reg_Step_Attendee_Information extends EE_SPCO_Reg_Step {
 			// fallback
 			default :
 				$default_input = apply_filters( 'FHEE__EE_SPCO_Reg_Step_Attendee_Information___generate_question_input__default', null, $question->type(), $question, $input_constructor_args );
-				if( ! $default_input ){
+				if( ! $default_input instanceof EE_Form_Input_Base ){
 					$default_input = new EE_Text_Input( $input_constructor_args );
 				}
 				return $default_input;
